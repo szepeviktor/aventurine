@@ -5,6 +5,8 @@
  * @package aventurine
  */
 
+/** @var \WP_Post $post */
+
 get_header(); ?>
 
 	<div id="primary" class="content-area image-attachment">
@@ -88,8 +90,8 @@ get_header(); ?>
 
 <div class="content-nav container">
 	<nav role="navigation" id="image-navigation" class="image-navigation">
-		<div class="nav-previous"><?php previous_image_link( false, __( 'Previous <span class="meta-nav">&rarr;</span>', 'aventurine' ) ); ?></div>
-		<div class="nav-next"><?php next_image_link( false, __( '<span class="meta-nav">&larr;</span> Next', 'aventurine' ) ); ?></div>
+		<div class="nav-previous"><?php previous_image_link( 'none', __( 'Previous <span class="meta-nav">&rarr;</span>', 'aventurine' ) ); ?></div>
+		<div class="nav-next"><?php next_image_link( 'none', __( '<span class="meta-nav">&larr;</span> Next', 'aventurine' ) ); ?></div>
 	</nav><!-- #image-navigation -->
 </div>
 

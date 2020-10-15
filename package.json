@@ -56,9 +56,9 @@
 	},
 	"scripts": {
 		"start": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
-		"build:style": "node-sass sassy_s/style.scss style.css --output-style expanded --indent-type tab --indent-width 1",
-		"build:style-editor": "node-sass sassy_s/editor-style.scss editor-style.css --output-style expanded --indent-type tab --indent-width 1",
-		"build:rtl": "rtlcss style.css style-rtl.css",
+		"build:style": "node-sass sassy_s/style.scss theme/style.css --output-style expanded --indent-type tab --indent-width 1",
+		"build:style-editor": "node-sass sassy_s/editor-style.scss theme/editor-style.css --output-style expanded --indent-type tab --indent-width 1",
+		"build:rtl": "rtlcss theme/style.css theme/style-rtl.css",
 		"build": "run-s \"build:*\"",
 		"watch": "chokidar \"**/*.scss\" -c \"npm run build\" --initial",
 		"lint:scss": "stylelint sassy_s",

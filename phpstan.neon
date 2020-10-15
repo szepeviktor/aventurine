@@ -7,3 +7,6 @@ parameters:
     checkMissingIterableValueType: false
     paths:
         - inc/
+        - theme/
+    ignoreErrors:
+        - '#typehint specified\.$#'

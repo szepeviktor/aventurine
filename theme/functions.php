@@ -196,14 +196,14 @@ add_action( 'widgets_init', 'aventurine_widgets_init' );
 function aventurine_scripts() {
 	wp_enqueue_style( 'aventurine-style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
 
-	wp_enqueue_script( 'aventurine-scripts', get_template_directory_uri() . '/js/src/navigation.js', array(), '20120206', true );
+	wp_enqueue_script( 'aventurine-scripts', dirname( get_template_directory_uri() ) . '/js/src/navigation.js', array(), '20120206', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
 	if ( is_singular() && wp_attachment_is_image() ) {
-		wp_enqueue_script( 'aventurine-keyboard-image-navigation', get_template_directory_uri() . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
+		wp_enqueue_script( 'aventurine-keyboard-image-navigation', dirname( get_template_directory_uri() ) . '/js/keyboard-image-navigation.js', array( 'jquery' ), '20120202' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'aventurine_scripts' );
@@ -304,20 +304,20 @@ add_action( 'admin_enqueue_scripts', 'aventurine_admin_fonts' );
 /**
  * Custom template tags for this theme.
  */
-require get_template_directory() . '/inc/template-tags.php';
+require dirname( get_template_directory() ) . '/inc/template-tags.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require get_template_directory() . '/inc/extras.php';
+require dirname( get_template_directory() ) . '/inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require get_template_directory() . '/inc/customizer.php';
+require dirname( get_template_directory() ) . '/inc/customizer.php';
 
 /**
  * Load Jetpack compatibility file.
  */
-require get_template_directory() . '/inc/jetpack.php';
+require dirname( get_template_directory() ) . '/inc/jetpack.php';
 

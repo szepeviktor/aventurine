@@ -154,8 +154,8 @@ if ( ! function_exists( 'aventurine_get_post_details' ) ) :
 	 * Prints HTML with meta information for the current post-date/time, author,
 	 * categories, and tags.
 	 *
-	 * @param {boolean} $show_taxonomy Whether the function should also print
-	 *                                 taxonomy data (used for legacy support).
+	 * @param bool $show_taxonomy Whether the function should also print
+	 *                            taxonomy data (used for legacy support).
 	 */
 	function aventurine_get_post_details( $show_taxonomy = true ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
@@ -182,7 +182,7 @@ if ( ! function_exists( 'aventurine_get_post_details' ) ) :
 			),
 			sprintf(
 				'<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s">%3$s</a></span>',
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+				esc_url( get_author_posts_url( (int) get_the_author_meta( 'ID' ) ) ),
 				/* Translators: %s: author name. */
 				esc_attr( sprintf( __( 'View all posts by %s', 'aventurine' ), get_the_author() ) ),
 				esc_html( get_the_author() )
@@ -227,7 +227,7 @@ endif;
 /**
  * Get the theme credits.
  *
- * @param {boolean} $show_wp Whether the string should include a WordPress link.
+ * @param bool $show_wp Whether the string should include a WordPress link.
  */
 function aventurine_get_credits( $show_wp = true ) {
 	$credits = '';
